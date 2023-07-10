@@ -32,8 +32,10 @@ const HeroSection = () => {
 						</svg>
 						<span className="relative">The</span>
 					</span>{" "}
-					Next generation{" "}
-					<span class="text-blue-600 dark:text-blue-500">website builder</span>
+					Generative AI Powered{" "}
+					<span class="text-blue-600 dark:text-blue-500">
+						Automation Platform
+					</span>
 				</h1>
 				<p className="text-base text-gray-700 dark:text-gray-300 md:text-lg">
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem

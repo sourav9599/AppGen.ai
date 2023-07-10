@@ -65,11 +65,13 @@ export default function HomePage() {
 							>
 								<span>Support</span>
 							</a>
-							<select value={theme} onChange={(e) => setTheme(e.target.value)}>
-								<option value="system">System</option>
-								<option value="dark">Dark</option>
-								<option value="light">Light</option>
-							</select>
+							<button
+								type="button"
+								onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+								className="mb-2 mr-2 rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+							>
+								{theme}
+							</button>
 						</nav>
 					</div>
 					{/* END Main Header Content */}
