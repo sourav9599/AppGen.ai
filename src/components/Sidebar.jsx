@@ -5,7 +5,7 @@ const Sidebar = () => {
       className='sticky top-0 z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0'
       aria-label='Sidebar'
     >
-      <div className='h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800'>
+      <div className='h-[calc(100vh-80px)] overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800'>
         <ul className='space-y-2 font-medium'>
           <li>
             <a
