@@ -14,8 +14,8 @@ const Navbar = () => {
   }
   return (
     <nav className='sticky top-0 z-50 h-20 w-full border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800'>
-      <div className='px-3 py-3 lg:px-5 lg:pl-3'>
-        <div className='flex items-center justify-between'>
+      <div className='h-full px-3 py-3 lg:px-5 lg:pl-3'>
+        <div className='flex h-full items-center justify-between'>
           <div className='flex items-center justify-start'>
             <button
               data-drawer-target='logo-sidebar'
@@ -51,7 +51,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className='flex items-center'>
-            <div className='ml-3 flex items-center'>
+            <div className='ml-3 flex items-center gap-2'>
               <div>
                 <button
                   type='button'
@@ -127,7 +127,7 @@ const Navbar = () => {
               <button
                 type='button'
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                className='mb-2 mr-2 rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700'
+                className='rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700'
               >
                 {theme}
               </button>

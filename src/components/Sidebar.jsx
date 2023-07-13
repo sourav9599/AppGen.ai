@@ -1,11 +1,22 @@
+'use client'
+
+import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
 const Sidebar = () => {
+  const [subMenuOpen, setSubMenuOpen] = useState(true)
+  const [inbox, setInbox] = useState([
+    { id: uuidv4(), message: 'Message 1' },
+    { id: uuidv4(), message: 'Message 2' },
+    { id: uuidv4(), message: 'Message 3' },
+  ])
   return (
     <div
       id='separator-sidebar'
       className='sticky top-0 z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0'
       aria-label='Sidebar'
     >
-      <div className='h-[calc(100vh-80px)] overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-gray-800'>
+      <div className='h-[calc(100vh-80px)] overflow-y-auto overscroll-contain bg-gray-50 px-3 py-4 dark:bg-gray-800'>
         <ul className='space-y-2 font-medium'>
           <li>
             <a
@@ -45,7 +56,7 @@ const Sidebar = () => {
               </span>
             </a>
           </li>
-          <li>
+          <li onClick={() => setSubMenuOpen(!subMenuOpen)}>
             <a
               href='#'
               className='group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'
@@ -65,6 +76,20 @@ const Sidebar = () => {
               </span>
             </a>
           </li>
+          {subMenuOpen && (
+            <ul className='mt-2 flex flex-col items-center gap-2 rounded-lg bg-gray-100 p-2 text-xs text-gray-900 duration-300 dark:bg-gray-700  dark:text-white'>
+              {inbox.map((item) => {
+                return (
+                  <li
+                    key={item.id}
+                    className=' w-full cursor-pointer rounded-lg p-2 text-left hover:bg-gray-300 dark:hover:bg-gray-900'
+                  >
+                    <a>{item.message}</a>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
           <li>
             <a
               href='#'
